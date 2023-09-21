@@ -9,6 +9,7 @@
  "field_order": [
   "first_name",
   "last_name",
+  "full_name",
   "date_of_birth"
  ],
  "fields": [
@@ -32,11 +33,22 @@
    "in_list_view": 1,
    "label": "Date Of Birth",
    "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-09-21 13:19:54.848824",
+ "links": [
+  {
+   "link_doctype": "Airplane Ticket",
+   "link_fieldname": "passenger"
+  }
+ ],
+ "modified": "2023-09-21 16:34:26.441404",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",
