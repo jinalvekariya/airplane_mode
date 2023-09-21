@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{airplane}-{source_airport}-{destination_airport_code}-###",
+ "autoname": "format:{flight}-{source_airport}-{destination_airport_code}-###",
  "creation": "2023-09-21 13:25:19.327080",
  "default_view": "List",
  "doctype": "DocType",
@@ -18,8 +18,14 @@
   "departure_details_section",
   "departure_date",
   "departure_time",
+  "total_amount",
   "column_break_4txtz",
-  "duration_of_flight"
+  "duration_of_flight",
+  "flight_price",
+  "status",
+  "amended_from",
+  "section_break_uqjfb",
+  "add_ons"
  ],
  "fields": [
   {
@@ -44,7 +50,6 @@
    "in_list_view": 1,
    "label": "Destination Airport ",
    "options": "Airport",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -61,6 +66,7 @@
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "label": "Destination Airport Code ",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -100,11 +106,49 @@
   {
    "fieldname": "column_break_4txtz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "section_break_uqjfb",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-09-21 13:33:10.004764",
+ "modified": "2023-09-21 17:01:25.339989",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -126,5 +170,19 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
+ "track_changes": 1
 }

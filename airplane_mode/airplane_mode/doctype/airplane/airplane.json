@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{airline}-###",
+ "autoname": "format:{airline}-{###}",
  "creation": "2023-09-21 13:17:08.460561",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,7 +10,7 @@
  "field_order": [
   "model",
   "airline",
-  "caoacity"
+  "capacity"
  ],
  "fields": [
   {
@@ -29,16 +29,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "caoacity",
+   "fieldname": "capacity",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Caoacity",
+   "label": "Capacity",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-21 13:17:08.460561",
+ "modified": "2023-09-21 15:13:20.092902",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",
