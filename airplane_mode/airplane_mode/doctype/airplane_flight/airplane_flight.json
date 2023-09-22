@@ -9,14 +9,22 @@
  "engine": "InnoDB",
  "field_order": [
   "airplane",
-  "date_of_departure",
-  "time_of_departure",
-  "duration",
+  "column_break_dxgdy",
   "status",
+  "airplane_details_section",
   "source_airport",
-  "destination_airport",
   "source_airport_code",
-  "destination_airport_code"
+  "column_break_tbibt",
+  "destination_airport",
+  "destination_airport_code",
+  "departure_details_section",
+  "date_of_departure",
+  "duration",
+  "column_break_ggkit",
+  "time_of_departure",
+  "amended_from",
+  "route",
+  "published"
  ],
  "fields": [
   {
@@ -58,32 +66,81 @@
    "fieldname": "source_airport",
    "fieldtype": "Link",
    "label": "Source Airport",
-   "options": "Airplane Ticket",
+   "options": "Airport",
    "reqd": 1
   },
   {
    "fieldname": "destination_airport",
    "fieldtype": "Link",
    "label": "Destination Airport",
-   "options": "Airplane Ticket",
+   "options": "Airport",
    "reqd": 1
   },
   {
-   "fetch_from": "source_airport.source_airport_code",
+   "fetch_from": "source_airport.code",
    "fieldname": "source_airport_code",
    "fieldtype": "Data",
    "label": "Source Airport Code"
   },
   {
-   "fetch_from": "destination_airport.destination_airport_code",
+   "fetch_from": "destination_airport.code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "label": "Destination Airport Code"
+  },
+  {
+   "fieldname": "airplane_details_section",
+   "fieldtype": "Section Break",
+   "label": "Airplane Details"
+  },
+  {
+   "fieldname": "column_break_tbibt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_details_section",
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
+  },
+  {
+   "fieldname": "column_break_ggkit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dxgdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Flight",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Data",
+   "label": "Published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-09-21 18:31:44.307828",
+ "is_published_field": "published",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Airplane Ticket",
+   "link_fieldname": "airplane_flight"
+  }
+ ],
+ "modified": "2023-09-22 15:44:06.632474",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -103,6 +160,7 @@
    "write": 1
   }
  ],
+ "route": "flight",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
