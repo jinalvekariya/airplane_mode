@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "prompt",
  "creation": "2023-09-21 13:19:40.413539",
  "default_view": "List",
  "doctype": "DocType",
@@ -48,11 +48,11 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2023-09-21 16:34:26.441404",
+ "modified": "2023-09-25 11:26:55.161609",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",
- "naming_rule": "Autoincrement",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {
