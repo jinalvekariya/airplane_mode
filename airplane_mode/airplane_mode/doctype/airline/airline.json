@@ -16,7 +16,7 @@
  "fields": [
   {
    "fieldname": "founding_year",
-   "fieldtype": "Float",
+   "fieldtype": "Int",
    "label": "Founding Year"
   },
   {
@@ -36,7 +36,8 @@
   {
    "fieldname": "website",
    "fieldtype": "Data",
-   "label": "Website"
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "links": [
@@ -45,7 +46,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2023-09-25 13:21:23.950618",
+ "modified": "2023-09-26 13:37:51.246449",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
